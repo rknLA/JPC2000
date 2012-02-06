@@ -16,14 +16,18 @@
       <canvas height='80px' id='display' width='500px'></canvas>
     </div>
     <div id='pads'>
-      <button class='pad' id='113'>q</button>
-      <button class='pad' id='119'>w</button>
-      <button class='pad' id='101'>e</button>
-      <button class='pad' id='114'>r</button>
-      <button class='pad' id='117'>u</button>
-      <button class='pad' id='105'>i</button>
-      <button class='pad' id='111'>o</button>
-      <button class='pad' id='112'>p</button>
+      <button class='pad' id='97'>a</button>
+      <button class='pad' id='115'>s</button>
+      <button class='pad' id='100'>d</button>
+      <button class='pad' id='102'>f</button>
+      <label class='bank' for='103'>Rec</label>
+      <button class='bank' id='103'>g</button>
+      <label class='bank' for='104'>Play</label>
+      <button class='bank' id='104'>h</button>
+      <button class='pad' id='106'>j</button>
+      <button class='pad' id='107'>k</button>
+      <button class='pad' id='108'>l</button>
+      <button class='pad' id='59'>;</button>
     </div>
     <div id='right'>
       <div id='transport'>
@@ -42,20 +46,28 @@
         </fieldset>
         <input id='pitch' max='1.5' min='0.5' step='0.01' type='range' value='1.0' />
       </div>
+      <div class='table' id='sequencer'>
+        <div class='tr' id='row1'>
+          <div class='td step1'>
+            <button class='step' id='49'>1</button>
+            <button class='step' id='50'>2</button>
+            <button class='step' id='51'>3</button>
+            <button class='step' id='52'>4</button>
+            <button class='step' id='53'>5</button>
+            <button class='step' id='54'>6</button>
+            <button class='step' id='55'>7</button>
+            <button class='step' id='56'>8</button>
+            <button class='step' id='113'>q</button>
+            <button class='step' id='119'>w</button>
+            <button class='step' id='101'>e</button>
+            <button class='step' id='114'>r</button>
+            <button class='step' id='116'>t</button>
+            <button class='step' id='121'>y</button>
+            <button class='step' id='117'>u</button>
+            <button class='step' id='105'>i</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <script type='text/javascript'>
-    //<![CDATA[
-      var GoSquared={};
-      GoSquared.acct = "GSN-227323-X";
-      (function(w){
-          function gs(){
-              w._gstc_lt=+(new Date); var d=document;
-              var g = d.createElement("script"); g.type = "text/javascript"; g.async = true; g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-              var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(g, s);
-          }
-          w.addEventListener?w.addEventListener("load",gs,false):w.attachEvent("onload",gs);
-      })(window);
-    //]]>
-  </script>
 </body>

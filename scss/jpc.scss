@@ -33,6 +33,19 @@ body {
 
 #logo {
   margin: 10px 25px;
+
+  width: 370px;
+  h1, h2 {
+    margin: 5px 0;
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 90%;
+    letter-spacing: 4px;
+    word-spacing: 7px;
+    color: #555;
+  }
+
 }
 
 #jpc #logo h1 {
@@ -40,23 +53,6 @@ body {
   width: 370px;
   height: 146px;
   text-indent: -9999px;
-}
-
-#logo h1, #logo h2 {
-  margin: 5px 0;
-
-}
-
-#logo h2 {
-  font-weight: 400;
-  font-size: 90%;
-  letter-spacing: 4px;
-  word-spacing: 7px;
-  color: #555;
-}
-
-#logo {
-  width: 370px;
 }
 
 #mhd {
@@ -127,32 +123,34 @@ body {
 #params {
   text-transform: lowercase;
   color: #555;
+
+  fieldset {
+    position: absolute;
+    bottom: 100px;
+    left: 145px;
+    width: 245px;
+    font-size: 90%;
+    border-color: #ddd
+
+    input {
+      margin: 0px 16px 2px;
+      -webkit-appearance: none;
+      background: #300;
+      height:10px;
+      width: 10px;
+      border: 1px solid #222
+    }
+
+    input:checked {
+      background-image: -webkit-radial-gradient(rgb(255,105,105) 2%, rgb(255,0,0) 12%, rgb(59,20,20) 100%);
+    }
+  }
 }
 
-#params fieldset {
-  position: absolute;
-  bottom: 100px;
-  left: 145px;
-  width: 245px;
-  font-size: 90%;
-  border-color: #ddd
-}
 
-#params fieldset input {
-  margin: 0px 16px 2px;
-  -webkit-appearance: none;
-  background: #300;
-  height:10px;
-  width: 10px;
-  border: 1px solid #222
-}
-
-#params fieldset input:checked {
-  background-image: -webkit-radial-gradient(rgb(255,105,105) 2%, rgb(255,0,0) 12%, rgb(59,20,20) 100%);
-}
 
 #pads {
-  width: 535px;
+  width: 790px;
   background: -webkit-linear-gradient(bottom, rgb(80,96,97) 0%, rgb(99,119,122) 100%);
   padding: 15px;
   vertical-align: baseline;
@@ -160,21 +158,41 @@ body {
   position: absolute;
   right: 25px;
   bottom: 25px;
+
+  button {
+    background: -webkit-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(189,189,189) 80%, rgb(209,209,209) 96%);
+    box-shadow: 0 0 3px #222;
+    border: none;
+    color: #444;
+    text-shadow:  0 1px 2px #fff;
+    font-size: 90%;
+    text-align: right;
+    display: inline-block;
+  }
+
+  button.pad {
+    height: 75px;
+    width:  75px;
+    margin: 10px;
+    padding-top: 50px;
+  }
+
+  button.bank {
+    height: 40px;
+    width:  40px;
+    margin: 10px;
+    padding-top: 15px;
+    display: none;
+  }
+  
+  button.active {
+    background: #ca8f8f;
+  }
+
 }
 
-#pads button {
-  background: -webkit-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(189,189,189) 80%, rgb(209,209,209) 96%);
-  box-shadow: 0 0 3px #222;
-  border: none;
-  height: 110px;
-  width:  110px;
-  margin: 10px;
-  color: #444;
-  text-shadow:  0 1px 2px #fff;
-  font-size: 90%;
-  text-align: right;
-  padding-top: 85px;
-  display: inline-block;
+.bank {
+  display: none;
 }
 
 @-webkit-keyframes pad_hit {
@@ -186,32 +204,34 @@ button.pressed {
   -webkit-animation: pad_hit 0.1s 1;
 }
 
-#pads button.active {
-  background: #ca8f8f;
-}
-
 #transport {
   position: absolute;
   bottom: 25px;
   left: 30px;
+
+  button {
+    display: inline-block;
+    padding: 10px 25px;
+    margin: 0 5px;
+    font-size: 90%;
+    background: -webkit-linear-gradient(bottom, rgb(138,138,138) 0%, rgb(184,184,184) 100%);
+    color: #444;
+    box-shadow: 0 1px 2px #222, 0 -1px 1px #666;
+    border-width: 1px;
+    text-shadow:  0 1px 2px #fff;
+  }
+
+  button:active {
+    box-shadow: none;
+    background: -webkit-linear-gradient(bottom, rgb(160,160,160) 0%, rgb(138,138,138) 100%);
+    position: relative;
+    top: 1px
+  }
 }
 
-#transport button {
-  display: inline-block;
-  padding: 10px 25px;
-  margin: 0 5px;
-  font-size: 90%;
-  background: -webkit-linear-gradient(bottom, rgb(138,138,138) 0%, rgb(184,184,184) 100%);
-  color: #444;
-  box-shadow: 0 1px 2px #222, 0 -1px 1px #666;
-  border-width: 1px;
-  text-shadow:  0 1px 2px #fff;
-}
+#sequencer {
+  position: absolute;
 
-#transport button:active {
-  box-shadow: none;
-  background: -webkit-linear-gradient(bottom, rgb(160,160,160) 0%, rgb(138,138,138) 100%);
-  position: relative;
-  top: 1px
+
 }
 

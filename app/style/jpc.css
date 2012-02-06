@@ -1,14 +1,14 @@
-/* line 1, ../scss/jpc.scss */
+/* line 1, ../../scss/jpc.scss */
 * {
   border-radius: 5px;
 }
 
-/* line 5, ../scss/jpc.scss */
+/* line 5, ../../scss/jpc.scss */
 html {
   height: 100%;
 }
 
-/* line 10, ../scss/jpc.scss */
+/* line 10, ../../scss/jpc.scss */
 body {
   background: #866;
   height: 100%;
@@ -17,7 +17,7 @@ body {
   clear: both;
 }
 
-/* line 18, ../scss/jpc.scss */
+/* line 18, ../../scss/jpc.scss */
 #jpc {
   margin: 20px auto 50px;
   padding: 10px 30px;
@@ -30,30 +30,21 @@ body {
   border-radius: 20px;
 }
 
-/* line 30, ../scss/jpc.scss */
+/* line 30, ../../scss/jpc.scss */
 #left {
   float: left;
 }
 
-/* line 34, ../scss/jpc.scss */
+/* line 34, ../../scss/jpc.scss */
 #logo {
   margin: 10px 25px;
-}
-
-/* line 38, ../scss/jpc.scss */
-#jpc #logo h1 {
-  background: url("/logo.png") no-repeat;
   width: 370px;
-  height: 146px;
-  text-indent: -9999px;
 }
-
-/* line 45, ../scss/jpc.scss */
+/* line 38, ../../scss/jpc.scss */
 #logo h1, #logo h2 {
   margin: 5px 0;
 }
-
-/* line 50, ../scss/jpc.scss */
+/* line 41, ../../scss/jpc.scss */
 #logo h2 {
   font-weight: 400;
   font-size: 90%;
@@ -62,12 +53,15 @@ body {
   color: #555;
 }
 
-/* line 58, ../scss/jpc.scss */
-#logo {
+/* line 51, ../../scss/jpc.scss */
+#jpc #logo h1 {
+  background: url("/logo.png") no-repeat;
   width: 370px;
+  height: 146px;
+  text-indent: -9999px;
 }
 
-/* line 62, ../scss/jpc.scss */
+/* line 58, ../../scss/jpc.scss */
 #mhd {
   width: 330px;
   box-shadow: 0px 1px 1px #222;
@@ -77,7 +71,7 @@ body {
   -webkit-transform: rotate(350deg);
 }
 
-/* line 71, ../scss/jpc.scss */
+/* line 67, ../../scss/jpc.scss */
 #sticker {
   display: inline;
   padding: 5px 20px;
@@ -93,7 +87,7 @@ body {
   -webkit-transform: rotate(2deg);
 }
 
-/* line 86, ../scss/jpc.scss */
+/* line 82, ../../scss/jpc.scss */
 #bezel {
   background: -webkit-linear-gradient(bottom, #3c3c3c 0%, #5a5a5a 100%);
   padding: 15px;
@@ -102,7 +96,7 @@ body {
   right: 25px;
 }
 
-/* line 94, ../scss/jpc.scss */
+/* line 90, ../../scss/jpc.scss */
 #display {
   background: #bdc6b3;
   border: 2px solid #aaa;
@@ -113,7 +107,7 @@ body {
   box-shadow: 0px 0px 10px #888 inset;
 }
 
-/* line 104, ../scss/jpc.scss */
+/* line 100, ../../scss/jpc.scss */
 #pitch {
   -webkit-appearance: none;
   background-image: -webkit-linear-gradient(bottom, #292829 0%, #424242 47%, #524f52 66%, #383838 68%);
@@ -126,7 +120,7 @@ body {
   bottom: 250px;
 }
 
-/* line 116, ../scss/jpc.scss */
+/* line 112, ../../scss/jpc.scss */
 #pitch::-webkit-slider-thumb {
   -webkit-transform: rotate(-90deg);
   -webkit-appearance: none;
@@ -138,40 +132,34 @@ body {
   box-shadow: 0px -1px 1px black;
 }
 
-/* line 127, ../scss/jpc.scss */
+/* line 123, ../../scss/jpc.scss */
 #params {
   text-transform: lowercase;
   color: #555;
 }
-
-/* line 132, ../scss/jpc.scss */
+/* line 127, ../../scss/jpc.scss */
 #params fieldset {
   position: absolute;
   bottom: 100px;
   left: 145px;
   width: 245px;
   font-size: 90%;
-  border-color: #dddddd;
+  border-color: #dddddd input;
+  border-color-margin: 0px 16px 2px;
+  border-color--webkit-appearance: none;
+  border-color-background: #300;
+  border-color-height: 10px;
+  border-color-width: 10px;
+  border-color-border: 1px solid #222222;
 }
-
-/* line 141, ../scss/jpc.scss */
-#params fieldset input {
-  margin: 0px 16px 2px;
-  -webkit-appearance: none;
-  background: #300;
-  height: 10px;
-  width: 10px;
-  border: 1px solid #222222;
-}
-
-/* line 150, ../scss/jpc.scss */
+/* line 144, ../../scss/jpc.scss */
 #params fieldset input:checked {
   background-image: -webkit-radial-gradient(#ff6969 2%, red 12%, #3b1414 100%);
 }
 
-/* line 154, ../scss/jpc.scss */
+/* line 152, ../../scss/jpc.scss */
 #pads {
-  width: 535px;
+  width: 790px;
   background: -webkit-linear-gradient(bottom, #506061 0%, #63777a 100%);
   padding: 15px;
   vertical-align: baseline;
@@ -180,53 +168,66 @@ body {
   right: 25px;
   bottom: 25px;
 }
-
-/* line 165, ../scss/jpc.scss */
+/* line 162, ../../scss/jpc.scss */
 #pads button {
   background: -webkit-linear-gradient(bottom, #a6a6a6 0%, #bdbdbd 80%, #d1d1d1 96%);
   box-shadow: 0 0 3px #222;
   border: none;
-  height: 110px;
-  width: 110px;
-  margin: 10px;
   color: #444;
   text-shadow: 0 1px 2px #fff;
   font-size: 90%;
   text-align: right;
-  padding-top: 85px;
   display: inline-block;
+}
+/* line 173, ../../scss/jpc.scss */
+#pads button.pad {
+  height: 75px;
+  width: 75px;
+  margin: 10px;
+  padding-top: 50px;
+}
+/* line 180, ../../scss/jpc.scss */
+#pads button.bank {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+  padding-top: 15px;
+  display: none;
+}
+/* line 188, ../../scss/jpc.scss */
+#pads button.active {
+  background: #ca8f8f;
+}
+
+/* line 194, ../../scss/jpc.scss */
+.bank {
+  display: none;
 }
 
 @-webkit-keyframes pad_hit {
-  /* line 181, ../scss/jpc.scss */
+  /* line 199, ../../scss/jpc.scss */
   0% {
     background: #f56b6b;
   }
 
-  /* line 182, ../scss/jpc.scss */
+  /* line 200, ../../scss/jpc.scss */
   100% {
     background: #ca8f8f;
   }
 }
 
-/* line 185, ../scss/jpc.scss */
+/* line 203, ../../scss/jpc.scss */
 button.pressed {
   -webkit-animation: pad_hit 0.1s 1;
 }
 
-/* line 189, ../scss/jpc.scss */
-#pads button.active {
-  background: #ca8f8f;
-}
-
-/* line 193, ../scss/jpc.scss */
+/* line 207, ../../scss/jpc.scss */
 #transport {
   position: absolute;
   bottom: 25px;
   left: 30px;
 }
-
-/* line 199, ../scss/jpc.scss */
+/* line 212, ../../scss/jpc.scss */
 #transport button {
   display: inline-block;
   padding: 10px 25px;
@@ -238,11 +239,15 @@ button.pressed {
   border-width: 1px;
   text-shadow: 0 1px 2px #fff;
 }
-
-/* line 211, ../scss/jpc.scss */
+/* line 224, ../../scss/jpc.scss */
 #transport button:active {
   box-shadow: none;
   background: -webkit-linear-gradient(bottom, #a0a0a0 0%, #8a8a8a 100%);
   position: relative;
   top: 1px;
+}
+
+/* line 232, ../../scss/jpc.scss */
+#sequencer {
+  position: absolute;
 }
