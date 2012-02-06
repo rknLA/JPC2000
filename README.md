@@ -13,6 +13,9 @@ Instructions
 This fork uses rvm and a gemset called jpc.
 
 You should be able to run the server by calling
+
     bundle install
+
 followed by
+
     ruby app.js
