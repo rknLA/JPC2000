@@ -1,0 +1,217 @@
+* {
+  border-radius: 5px
+}
+
+html {
+  height: 100%
+}
+
+
+body {
+  background: #866;
+  height: 100%;
+  font-family: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+  text-transform: uppercase;
+  clear:both;
+}
+
+#jpc {
+  margin: 20px auto 50px;
+  padding: 10px 30px;
+  width: 1000px;
+  height: 620px;
+  background: -webkit-linear-gradient(bottom, rgb(191,194,188) 0%, rgb(206,210,201) 50%);
+  position: relative;
+  box-shadow: 0px 0px 25px #111 inset, 0px 5px 5px #111;
+  border: 2px solid #333;
+  border-radius: 20px
+}
+
+#left {
+  float: left;
+}
+
+#logo {
+  margin: 10px 25px;
+}
+
+#jpc #logo h1 {
+  background: url('/logo.png') no-repeat;
+  width: 370px;
+  height: 146px;
+  text-indent: -9999px;
+}
+
+#logo h1, #logo h2 {
+  margin: 5px 0;
+
+}
+
+#logo h2 {
+  font-weight: 400;
+  font-size: 90%;
+  letter-spacing: 4px;
+  word-spacing: 7px;
+  color: #555;
+}
+
+#logo {
+  width: 370px;
+}
+
+#mhd {
+  width: 330px;
+  box-shadow: 0px 1px 1px #222;
+  position: absolute;
+  top: 300px;
+  left: 110px;
+  -webkit-transform:rotate(350deg)
+}
+
+#sticker {
+  display: inline;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background: #fff;
+  text-align: center;
+  background: #71ad1b;
+  color: #d3d13c;
+  position: absolute;
+  top: 370px;
+  left: 170px;
+  box-shadow: 0px 1px 1px #222;
+  -webkit-transform:rotate(2deg)
+}
+
+#bezel {
+  background: -webkit-linear-gradient(bottom, rgb(60,60,60) 0%, rgb(90,90,90) 100%);
+  padding: 15px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+}
+
+#display {
+  background: #bdc6b3;
+  border: 2px solid #aaa;
+  padding: 15px;
+  border-top-color: #666;
+  border-top-width: 3px;
+  border-bottom-color: #bbb;
+  box-shadow: 0px 0px 10px #888 inset;
+}
+
+#pitch {
+  -webkit-appearance: none;
+  background-image: -webkit-linear-gradient(bottom, rgb(41,40,41) 0%, rgb(66,66,66) 47%, rgb(82,79,82) 66%, rgb(56,56,56) 68%);
+  height:5px;
+  border: 1px solid #222;
+  -webkit-transform:rotate(-90deg);
+  width: 310px;
+  position: absolute;
+  left: -90px;
+  bottom: 250px;
+}
+
+#pitch::-webkit-slider-thumb {
+  -webkit-transform:rotate(-90deg);
+  -webkit-appearance: none;
+  background-image:-webkit-linear-gradient(bottom, rgb(242,237,242) 0%, rgb(184,184,184) 24%, rgb(207,207,207) 26%, rgb(230,230,230) 45%, rgb(154,167,218) 46%, rgb(155,177,222) 52%, rgb(255,255,255) 52%, rgb(230,230,230) 77%, rgb(255,255,255) 80%, rgb(212,212,212) 97%, rgb(214,214,214) 95%);
+  width: 60px;
+  height: 30px;
+  border: 2px solid #999;
+  border-bottom-color: #ddd;
+  box-shadow: 0px -1px 1px #000
+}
+
+#params {
+  text-transform: lowercase;
+  color: #555;
+}
+
+#params fieldset {
+  position: absolute;
+  bottom: 100px;
+  left: 145px;
+  width: 245px;
+  font-size: 90%;
+  border-color: #ddd
+}
+
+#params fieldset input {
+  margin: 0px 16px 2px;
+  -webkit-appearance: none;
+  background: #300;
+  height:10px;
+  width: 10px;
+  border: 1px solid #222
+}
+
+#params fieldset input:checked {
+  background-image: -webkit-radial-gradient(rgb(255,105,105) 2%, rgb(255,0,0) 12%, rgb(59,20,20) 100%);
+}
+
+#pads {
+  width: 535px;
+  background: -webkit-linear-gradient(bottom, rgb(80,96,97) 0%, rgb(99,119,122) 100%);
+  padding: 15px;
+  vertical-align: baseline;
+  border-radius: 10px;
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+}
+
+#pads button {
+  background: -webkit-linear-gradient(bottom, rgb(166,166,166) 0%, rgb(189,189,189) 80%, rgb(209,209,209) 96%);
+  box-shadow: 0 0 3px #222;
+  border: none;
+  height: 110px;
+  width:  110px;
+  margin: 10px;
+  color: #444;
+  text-shadow:  0 1px 2px #fff;
+  font-size: 90%;
+  text-align: right;
+  padding-top: 85px;
+  display: inline-block;
+}
+
+@-webkit-keyframes pad_hit {
+  0%   { background: #f56b6b; }
+  100% { background: #ca8f8f; }
+}
+
+button.pressed {
+  -webkit-animation: pad_hit 0.1s 1;
+}
+
+#pads button.active {
+  background: #ca8f8f;
+}
+
+#transport {
+  position: absolute;
+  bottom: 25px;
+  left: 30px;
+}
+
+#transport button {
+  display: inline-block;
+  padding: 10px 25px;
+  margin: 0 5px;
+  font-size: 90%;
+  background: -webkit-linear-gradient(bottom, rgb(138,138,138) 0%, rgb(184,184,184) 100%);
+  color: #444;
+  box-shadow: 0 1px 2px #222, 0 -1px 1px #666;
+  border-width: 1px;
+  text-shadow:  0 1px 2px #fff;
+}
+
+#transport button:active {
+  box-shadow: none;
+  background: -webkit-linear-gradient(bottom, rgb(160,160,160) 0%, rgb(138,138,138) 100%);
+  position: relative;
+  top: 1px
+}
+
