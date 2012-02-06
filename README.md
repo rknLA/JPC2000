@@ -19,3 +19,9 @@ You should be able to run the server by calling
 followed by
 
     ruby app.js
+
+You may also want to run guard in another tab to update the served page dynamically as you make changes:
+
+    guard
+
+
