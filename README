@@ -1,0 +1,4 @@
+Fork of stevegraham's JPC2000
+
+Goals include adding a proper sequence recorder and/or step-sequencer, as well
+as maybe some DSP.
