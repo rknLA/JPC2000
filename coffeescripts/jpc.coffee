@@ -1,10 +1,57 @@
 $(document).ready ->
+  class AudioPlayer
+    constructor: (@view)->
+
+    play: ->
+      if @buffer
+        @source        = audioContext.createBufferSource()
+        @source.buffer = @buffer
+        @source.connect audioContext.destination
+        @source.playbackRate.value = @playbackRate
+        @source.noteGrainOn 0, @startAt || 0, (@endAt - @startAt) || @buffer.duration
+        @triggerView()
+
+    stop: ->
+      if @buffer && @source
+        @source.noteOff 0
+        window.clearTimeout @timer
+        @view.lightOff
+
+    getPlaybackRate: -> @source.playbackRate.value if @source
+
+    setPlaybackRate: (rate) ->
+      if @source
+        @playbackRate = rate
+        @source.playbackRate.value = rate
+
+    computedDuration: -> (((@endAt - @startAt) || @buffer.duration) / @getPlaybackRate()) * 1000
+
+    triggerView: ->
+      @view.lightOff()
+      @view.lightOn()
+      window.clearTimeout @timer
+      Display.draw this
+      timeOut = @computedDuration()
+      @timer  = window.setTimeout @view.lightOff, timeOut
+
+    load_file: (file) ->
+      reader = new FileReader
+      self   = this
+
+      reader.onload = (event) =>
+        onsuccess = (buffer) ->
+          self.buffer = buffer
+          Display.draw self
+
+        onerror   = -> alert 'Unsupported file format'
+
+        audioContext.decodeAudioData event.target.result, onsuccess, onerror
+
+      reader.readAsArrayBuffer(file)
+
+
   if typeof(webkitAudioContext) == 'undefined' && typeof(AudioContext) == 'undefined'
     alert 'Your browser does not support the W3C AudioContext API. Try Google Chrome.'
-
-  $(document).bind 'keypress', (event) ->
-    code = String event.keyCode
-    $('#' + code).trigger 'mousedown'
 
   class Display
     canvas = document.getElementById 'display'
@@ -108,56 +155,11 @@ $(document).ready ->
 
   audioContext = new webkitAudioContext
 
-  class AudioPlayer
-    constructor: (@view)->
 
-    play: ->
-      if @buffer
-        @source        = audioContext.createBufferSource()
-        @source.buffer = @buffer
-        @source.connect audioContext.destination
-        @source.playbackRate.value = @playbackRate
-        @source.noteGrainOn 0, @startAt || 0, (@endAt - @startAt) || @buffer.duration
-        @triggerView()
 
-    stop: ->
-      if @buffer && @source
-        @source.noteOff 0
-        window.clearTimeout @timer
-        @view.lightOff
-
-    getPlaybackRate: -> @source.playbackRate.value if @source
-
-    setPlaybackRate: (rate) ->
-      if @source
-        @playbackRate = rate
-        @source.playbackRate.value = rate
-
-    computedDuration: -> (((@endAt - @startAt) || @buffer.duration) / @getPlaybackRate()) * 1000
-
-    triggerView: ->
-      @view.lightOff()
-      @view.lightOn()
-      window.clearTimeout @timer
-      Display.draw this
-      timeOut = @computedDuration()
-      @timer  = window.setTimeout @view.lightOff, timeOut
-
-    load_file: (file) ->
-      reader = new FileReader
-      self   = this
-
-      reader.onload = (event) =>
-        onsuccess = (buffer) ->
-          self.buffer = buffer
-          Display.draw self
-
-        onerror   = -> alert 'Unsupported file format'
-
-        audioContext.decodeAudioData event.target.result, onsuccess, onerror
-
-      reader.readAsArrayBuffer(file)
-
+  $(document).bind 'keypress', (event) ->
+    code = String event.keyCode
+    $('#' + code).trigger 'mousedown'
 
   class PadView extends Backbone.View
     initialize: ->
